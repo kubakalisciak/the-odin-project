@@ -1,0 +1,19 @@
+:root {
+    --cell-width: 25px
+}
+#grid-container {
+    width: 400px;
+    height: 400px;
+    display: flex;
+    flex-wrap: wrap;
+    border: 2px solid black;
+}
+.grid-cell {
+    /* border: 1px solid red; */
+    width: var(--cell-width);
+    height: var(--cell-width);
+    box-sizing: border-box;
+}
+.black {
+    background-color: black;
+}
