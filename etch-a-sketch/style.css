@@ -45,9 +45,19 @@ button, input {
     background-color: #f5f3ff;
     border-radius: 10px;
 }
+.side-container {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+}
 .controls {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    justify-content: space-between;
+}
+.controls-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    flex-grow: 1;
 }
