@@ -1,3 +1,10 @@
+const rockBtn = document.getElementById('rockBtn')
+const paperBtn = document.getElementById('paperBtn')
+const scissorsBtn = document.getElementById('scissorsBtn')
+const scoreDisplay = document.getElementById('scoreDisplay')
+const verdictDisplay = document.getElementById('verdictDisplay')
+const winnerDisplay = document.getElementById('winnerDisplay')
+
 function getComputerChoice() {
     let choice = Math.floor(Math.random() * 3)
     switch (choice) {
@@ -51,14 +58,6 @@ function playGame() {
         }
     }
     
-    // for (let i=0;i<5;i++) {
-    //     playRound(getComputerChoice(), getHumanChoice())
-    // }
-    playRound(getComputerChoice(), getHumanChoice())
-    playRound(getComputerChoice(), getHumanChoice())
-    playRound(getComputerChoice(), getHumanChoice())
-    playRound(getComputerChoice(), getHumanChoice())
-    playRound(getComputerChoice(), getHumanChoice())
 
     console.log("Score: " + humanScore + " : " + computerScore)
 }
