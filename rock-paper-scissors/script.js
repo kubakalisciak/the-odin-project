@@ -1,5 +1,5 @@
 function getComputerChoice() {
-    choice = Math.floor(Math.random() * 3)
+    let choice = Math.floor(Math.random() * 3)
     switch (choice) {
         case 0:
             return "rock";
@@ -21,7 +21,7 @@ function playGame() {
     let humanScore = 0
     let computerScore = 0
     
-    function playRound(humanChoice, computerChoice) {
+    function playRound(computerChoice, humanChoice) {
         if (humanChoice == computerChoice) {
             console.log("Tie!")
         }
@@ -51,9 +51,16 @@ function playGame() {
         }
     }
     
-    for (let i=0; i++; i==5) {
-        playRound(getComputerChoice(), getHumanChoice())
-    }
+    // for (let i=0;i<5;i++) {
+    //     playRound(getComputerChoice(), getHumanChoice())
+    // }
+    playRound(getComputerChoice(), getHumanChoice())
+    playRound(getComputerChoice(), getHumanChoice())
+    playRound(getComputerChoice(), getHumanChoice())
+    playRound(getComputerChoice(), getHumanChoice())
+    playRound(getComputerChoice(), getHumanChoice())
+
+    console.log("Score: " + humanScore + " : " + computerScore)
 }
 
 playGame()
