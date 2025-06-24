@@ -1,6 +1,8 @@
 const gridContainer = document.getElementById('grid-container');
 const generateBtn = document.getElementById('generateBtn');
 const cellInput = document.getElementById('cellInput');
+const clearBtn = document.getElementById('clearBtn');
+let lastGridSize = 16
 
 function generateGrid(size) {
     const containerSize = 400;
@@ -25,10 +27,14 @@ function generateGrid(size) {
             cell.classList.toggle('black');
         });
     }
+    lastGridSize = parseInt(cellInput.value);
 }
 
 generateBtn.addEventListener('click', () => {
     generateGrid(parseInt(cellInput.value));
+});
+clearBtn.addEventListener('click', () => {
+    generateGrid(lastGridSize);
 });
 
 generateGrid(16);
