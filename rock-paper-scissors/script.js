@@ -20,46 +20,62 @@ function getComputerChoice() {
     }
 }
 
-function getHumanChoice() {
-    return prompt("Rock, paper, scissors?").toLowerCase()
-}
-
 function playGame() {
     let humanScore = 0
     let computerScore = 0
     
     function playRound(computerChoice, humanChoice) {
         if (humanChoice == computerChoice) {
-            console.log("Tie!")
+            verdictDisplay.textContent = "Tie!";
         }
         else if (humanChoice == "rock" && computerChoice == "scissors") {
-            console.log("You win! Rock beats scissors")
+            verdictDisplay.textContent = "You win! Rock beats scissors"
             humanScore++;
         }
         else if (humanChoice == "rock" && computerChoice == "paper") {
-            console.log("You lose! Rock doesn't beat paper")
+            verdictDisplay.textContent = "You lose! Rock doesn't beat paper"
             computerScore++;
         }
         else if (humanChoice == "paper" && computerChoice == "rock") {
-            console.log("You win! Paper beats rock")
+            verdictDisplay.textContent = "You win! Paper beats rock"
             humanScore++;
         }
         else if (humanChoice == "paper" && computerChoice == "scissors") {
-            console.log("You lose! Paper doesn't beat scissors")
-            computerScore++;
+            verdictDisplay.textContent = "You lose! Paper doesn't beat scissors"
+            computerScore++
         }
         else if (humanChoice == "scissors" && computerChoice == "rock") {
-            console.log("You lose! Scissors don't beat rock")
+            verdictDisplay.textContent = "You lose! Scissors don't beat rock"
             computerScore++;
         }
         else if (humanChoice == "scissors" && computerChoice == "paper") {
-            console.log("You win! Scissors beat paper")
-            humanScore++;
+            verdictDisplay.textContent = "You win! Scissors beat paper"
+        }
+        
+        if (humanScore == 5) {
+            winnerDisplay.textContent = "You win!"
+            rockBtn.disabled = true;
+            paperBtn.disabled = true;
+            scissorsBtn.disabled = true;
+        }
+        else if (computerScore == 5) {
+            winnerDisplay.textContent = "You lose"
+            rockBtn.disabled = true;
+            paperBtn.disabled = true;
+            scissorsBtn.disabled = true;
         }
     }
+    rockBtn.addEventListener("click", () => {
+        playRound(getComputerChoice(), "rock")
+    });
     
-
-    console.log("Score: " + humanScore + " : " + computerScore)
+    paperBtn.addEventListener("click", () => {
+        playRound(getComputerChoice(), "paper")
+    });
+    
+    scissorsBtn.addEventListener("click", () => {
+        playRound(getComputerChoice(), "scissors")
+    });
 }
 
 playGame()
