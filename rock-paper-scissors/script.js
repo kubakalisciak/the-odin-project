@@ -4,6 +4,10 @@ const scissorsBtn = document.getElementById('scissorsBtn')
 const scoreDisplay = document.getElementById('scoreDisplay')
 const verdictDisplay = document.getElementById('verdictDisplay')
 const winnerDisplay = document.getElementById('winnerDisplay')
+const resetBtn = document.getElementById('resetBtn')
+
+let humanScore = 0
+let computerScore = 0
 
 function getComputerChoice() {
     let choice = Math.floor(Math.random() * 3)
@@ -21,9 +25,6 @@ function getComputerChoice() {
 }
 
 function playGame() {
-    let humanScore = 0
-    let computerScore = 0
-    
     function playRound(computerChoice, humanChoice) {
         if (humanChoice == computerChoice) {
             verdictDisplay.textContent = "Tie!";
@@ -64,6 +65,8 @@ function playGame() {
             paperBtn.disabled = true;
             scissorsBtn.disabled = true;
         }
+
+        scoreDisplay.textContent = humanScore + " : " + computerScore
     }
     rockBtn.addEventListener("click", () => {
         playRound(getComputerChoice(), "rock")
@@ -79,3 +82,14 @@ function playGame() {
 }
 
 playGame()
+
+resetBtn.addEventListener("click", () => {
+    winnerDisplay.textContent = ""
+    verdictDisplay.textContent = ""
+    scoreDisplay.textContent = "0 : 0"
+    humanScore = 0
+    computerScore = 0
+    rockBtn.disabled = false;
+    paperBtn.disabled = false;
+    scissorsBtn.disabled = false;
+});
