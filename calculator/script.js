@@ -83,6 +83,25 @@ function addOperator(operator) {
     updateDisplay(operationDisplay, operationDisplayContent);
 }
 
+// Decimal handler
+function addDecimal() {
+    // Get the current portion being typed
+    let parts = operationDisplayContent.trim().split(' ');
+    let lastPart = parts[parts.length - 1];
+
+    // If the last part already contains a dot, do nothing
+    if (lastPart.includes('.')) return;
+
+    // If last part is an operator, start a new number with '0.'
+    if (['+', '-', '*', '/'].includes(lastPart)) {
+        operationDisplayContent += ' 0.';
+    } else {
+        operationDisplayContent += '.';
+    }
+
+    updateDisplay(operationDisplay, operationDisplayContent);
+}
+
 
 // Digit buttons
 document.getElementById('button1').addEventListener('click', () => addDigit("1"));
@@ -158,3 +177,5 @@ document.getElementById('buttonDelete').addEventListener('click', () => {
     operationDisplayContent = formatted;
     updateDisplay(operationDisplay, operationDisplayContent);
 });
+
+document.getElementById('buttonDecimal').addEventListener('click', addDecimal);

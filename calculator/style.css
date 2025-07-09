@@ -41,7 +41,7 @@ button {
     padding: 10px;
     margin: 10px;
 }
-#buttonEquals, #buttonClear, #buttonPlus, #buttonMinus, #buttonMultiply, #buttonDivide {
+#buttonDivide, #buttonMultiply, #buttonMinus, #buttonPlus, #buttonClear, #buttonDelete, #buttonEquals {
     background-color: #e03616;
 }
 #resultDisplay {
@@ -50,4 +50,7 @@ button {
 p {
     text-align: right;
     height: 20px;
+}
+.big {
+    width: 95px;
 }
