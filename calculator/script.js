@@ -22,9 +22,9 @@ function operate(num1, num2, operator) {
         case '*':
             return multiply(num1, num2);
         case '/':
-            if (num2 == 0) {
-                alert("no.")
-                return 0
+            if (num2 === 0) {
+                alert("Cannot divide by zero.");
+                return 0;
             }
             return divide(num1, num2);
         default:
@@ -34,6 +34,7 @@ function operate(num1, num2, operator) {
 
 // Display logic
 let operationDisplayContent = "";
+let resultDisplayContent = "";
 const operationDisplay = document.getElementById('operationDisplay');
 const resultDisplay = document.getElementById('resultDisplay');
 
@@ -45,13 +46,34 @@ function updateDisplay(object, content) {
 function addDigit(digit) {
     operationDisplayContent += digit;
     updateDisplay(operationDisplay, operationDisplayContent);
+    updateDisplay(resultDisplay, "");
 }
 
 // Operator button handler
 function addOperator(op) {
-    operationDisplayContent += ` ${op} `;
+    let parts = operationDisplayContent.trim().split(' ');
+
+    if (parts.length === 3) {
+        let number1 = parseFloat(parts[0]);
+        let operator = parts[1];
+        let number2 = parseFloat(parts[2]);
+
+        if (!isNaN(number1) && !isNaN(number2)) {
+            let result = operate(number1, number2, operator);
+            resultDisplayContent = result;
+            updateDisplay(resultDisplay, Number.isInteger(result) ? result : result.toFixed(2));
+            operationDisplayContent = `${result} ${op} `;
+        }
+    } else if (parts.length === 1 && resultDisplayContent !== "") {
+        operationDisplayContent = `${resultDisplayContent} ${op} `;
+    } else if (parts.length === 2) {
+        parts[1] = op;
+        operationDisplayContent = parts.join(' ') + ' ';
+    } else {
+        operationDisplayContent += ` ${op} `;
+    }
+
     updateDisplay(operationDisplay, operationDisplayContent);
-    // TODO: add "jump from equals"
 }
 
 // Digit buttons
@@ -82,16 +104,35 @@ document.getElementById('buttonClear').addEventListener('click', () => {
 
 // Equals button
 document.getElementById('buttonEquals').addEventListener('click', () => {
-    let [num1Str, operator, num2Str] = operationDisplayContent.split(' ');
-    let number1 = parseFloat(num1Str);
-    let number2 = parseFloat(num2Str);
-    
-    resultDisplayContent = operate(number1, number2, operator);
-    if (resultDisplayContent == parseInt(resultDisplayContent)) {
-        updateDisplay(resultDisplay, resultDisplayContent);
+    let parts = operationDisplayContent.trim().split(' ');
+    if (parts.length === 3) {
+        let number1 = parseFloat(parts[0]);
+        let operator = parts[1];
+        let number2 = parseFloat(parts[2]);
+
+        if (!isNaN(number1) && !isNaN(number2)) {
+            let result = operate(number1, number2, operator);
+            resultDisplayContent = result;
+            updateDisplay(resultDisplay, Number.isInteger(result) ? result : result.toFixed(2));
+            operationDisplayContent = "";
+            updateDisplay(operationDisplay, "");
+        }
     }
-    else {
-        updateDisplay(resultDisplay, resultDisplayContent).toFixed(2);
+});
+
+// Delete button
+document.getElementById('buttonDelete').addEventListener('click', () => {
+    let noSpaces = operationDisplayContent.split(' ').join('');
+    let shortened = noSpaces.slice(0, -1);
+    let formatted = '';
+    for (let i = 0; i < shortened.length; i++) {
+        let char = shortened[i];
+        if (['+', '-', '*', '/'].includes(char)) {
+            formatted += ` ${char} `;
+        } else {
+            formatted += char;
+        }
     }
-    operationDisplayContent = "";
+    operationDisplayContent = formatted;
+    updateDisplay(operationDisplay, operationDisplayContent);
 });
