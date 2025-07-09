@@ -50,9 +50,10 @@ function addDigit(digit) {
 }
 
 // Operator button handler
-function addOperator(op) {
+function addOperator(operator) {
     let parts = operationDisplayContent.trim().split(' ');
 
+    // If expression is complete: evaluate it
     if (parts.length === 3) {
         let number1 = parseFloat(parts[0]);
         let operator = parts[1];
@@ -62,19 +63,26 @@ function addOperator(op) {
             let result = operate(number1, number2, operator);
             resultDisplayContent = result;
             updateDisplay(resultDisplay, Number.isInteger(result) ? result : result.toFixed(2));
-            operationDisplayContent = `${result} ${op} `;
+            operationDisplayContent = `${result} ${operator} `;
         }
-    } else if (parts.length === 1 && resultDisplayContent !== "") {
-        operationDisplayContent = `${resultDisplayContent} ${op} `;
-    } else if (parts.length === 2) {
-        parts[1] = op;
+    }
+    // Only use previous result if nothing has been typed yet
+    else if (operationDisplayContent.trim() === "" && resultDisplayContent !== "") {
+        operationDisplayContent = `${resultDisplayContent} ${operator} `;
+    }
+    // Replace operator if second operator pressed in a row
+    else if (parts.length === 2) {
+        parts[1] = operator;
         operationDisplayContent = parts.join(' ') + ' ';
-    } else {
-        operationDisplayContent += ` ${op} `;
+    }
+    // Otherwise, just append the operator
+    else {
+        operationDisplayContent += ` ${operator} `;
     }
 
     updateDisplay(operationDisplay, operationDisplayContent);
 }
+
 
 // Digit buttons
 document.getElementById('button1').addEventListener('click', () => addDigit("1"));
@@ -118,10 +126,11 @@ document.getElementById('buttonEquals').addEventListener('click', () => {
             updateDisplay(operationDisplay, "");
         }
     }
+    // powers logic
     if (parts.length == 2) {
         let number1 = parseFloat(parts[0]);
         let operator = parts[1];
-        if (operator = '*') {
+        if (operator == '*') {
             if (!isNaN(number1)) {
             let result = operate(number1, number1, operator);
             resultDisplayContent = result;
