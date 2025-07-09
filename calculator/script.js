@@ -118,6 +118,19 @@ document.getElementById('buttonEquals').addEventListener('click', () => {
             updateDisplay(operationDisplay, "");
         }
     }
+    if (parts.length == 2) {
+        let number1 = parseFloat(parts[0]);
+        let operator = parts[1];
+        if (operator = '*') {
+            if (!isNaN(number1)) {
+            let result = operate(number1, number1, operator);
+            resultDisplayContent = result;
+            updateDisplay(resultDisplay, Number.isInteger(result) ? result : result.toFixed(2));
+            operationDisplayContent = "";
+            updateDisplay(operationDisplay, "");
+            }
+        }
+    }
 });
 
 // Delete button
