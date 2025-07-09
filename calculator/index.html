@@ -5,26 +5,40 @@
 	<link rel="stylesheet" href="style.css">
 	<script src="script.js" defer></script>
 	<link rel="icon" type="image/x-icon" href="/images/favicon.ico">
-	<title>Document</title>
+	<title>Calculator</title>
 </head>
 <body>
-    <span id="operationDisplay">2 + 2</span>
-    <span id="resultDisplay">4</span>
-	<button id="button1">1</button>
-    <button id="button2">2</button>
-    <button id="button3">3</button>
-    <button id="button4">4</button>
-    <button id="button5">5</button>
-    <button id="button6">6</button>
-    <button id="button7">7</button>
-    <button id="button8">8</button>
-    <button id="button9">9</button>
-    <button id="button0">0</button>
-    <button id="buttonPlus">+</button>
-    <button id="buttonMinus">-</button>
-    <button id="buttonMultiply">*</button>
-    <button id="buttonDivide">/</button>
-    <button id="buttonEquals">=</button>
-    <button id="buttonClear">AC</button>
+    <div class="container">
+        <div class="display">
+            <p id="operationDisplay"></p>
+            <p id="resultDisplay"></p>
+        </div>
+        <div class="buttonCotainer">
+            <div class="buttonRow">
+                <button id="button7">7</button>
+                <button id="button8">8</button>
+                <button id="button9">9</button>
+                <button id="buttonMultiply">*</button>
+            </div>
+            <div class="buttonRow">
+                <button id="button4">4</button>
+                <button id="button5">5</button>
+                <button id="button6">6</button>
+                <button id="buttonDivide">/</button>
+            </div>
+            <div class="buttonRow">
+                <button id="button1">1</button>
+                <button id="button2">2</button>
+                <button id="button3">3</button>
+                <button id="buttonMinus">-</button>
+            </div>
+            <div class="buttonRow">
+                <button id="button0">0</button>
+                <button id="buttonEquals">=</button>
+                <button id="buttonClear">C</button>
+                <button id="buttonPlus">+</button>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

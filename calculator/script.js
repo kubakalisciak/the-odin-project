@@ -22,6 +22,10 @@ function operate(num1, num2, operator) {
         case '*':
             return multiply(num1, num2);
         case '/':
+            if (num2 == 0) {
+                alert("no.")
+                return 0
+            }
             return divide(num1, num2);
         default:
             return "Error";
@@ -47,6 +51,7 @@ function addDigit(digit) {
 function addOperator(op) {
     operationDisplayContent += ` ${op} `;
     updateDisplay(operationDisplay, operationDisplayContent);
+    // TODO: add "jump from equals"
 }
 
 // Digit buttons
@@ -70,6 +75,7 @@ document.getElementById('buttonDivide').addEventListener('click', () => addOpera
 // Clear button
 document.getElementById('buttonClear').addEventListener('click', () => {
     operationDisplayContent = "";
+    resultDisplayContent = "";
     updateDisplay(operationDisplay, "");
     updateDisplay(resultDisplay, "");
 });
@@ -79,11 +85,13 @@ document.getElementById('buttonEquals').addEventListener('click', () => {
     let [num1Str, operator, num2Str] = operationDisplayContent.split(' ');
     let number1 = parseFloat(num1Str);
     let number2 = parseFloat(num2Str);
-
-    if (!isNaN(number1) && !isNaN(number2) && operator) {
-        let result = operate(number1, number2, operator);
-        updateDisplay(resultDisplay, result);
-    } else {
-        updateDisplay(resultDisplay, "Invalid input");
+    
+    resultDisplayContent = operate(number1, number2, operator);
+    if (resultDisplayContent == parseInt(resultDisplayContent)) {
+        updateDisplay(resultDisplay, resultDisplayContent);
     }
+    else {
+        updateDisplay(resultDisplay, resultDisplayContent).toFixed(2);
+    }
+    operationDisplayContent = "";
 });
