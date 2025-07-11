@@ -77,6 +77,7 @@ a {
     grid-template-columns: auto auto auto auto;
     grid-template-rows: min-content min-content;
     gap: 32px;
+    /* todo: make responsive */
 }
 .project {
     border: 2px solid var(--yellow);
