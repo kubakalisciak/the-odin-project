@@ -116,3 +116,9 @@ button {
     color: var(--white);
     background-color: var(--accent);
 }
+.validate:user-invalid {
+    border-color: #f8333c;
+}
+.validate:user-valid {
+    border-color: #44af69;
+}

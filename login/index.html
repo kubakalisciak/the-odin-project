@@ -22,15 +22,15 @@
         </div>
         <form action="">
                 <div class="form">
-                <legend>Let's do this</legend>
+                <legend><h2>Let's do this!</h2></legend>
                 <div class="form-row">
                     <div class="form-control">
                         <label for="user_name">First name</label>
-                        <input type="text" name="user_name">
+                        <input type="text" name="user_name" required>
                     </div>
                     <div class="form-control">
                         <label for="user_surname">Last name</label>
-                        <input type="text" name="user_surname">
+                        <input type="text" name="user_surname" required>
                     </div>
                 </div>
                 <div class="form-row">
@@ -40,17 +40,17 @@
                     </div>
                     <div class="form-control">
                         <label for="email">Email address</label>
-                        <input type="email" name="email">
+                        <input type="email" name="email" required>
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-control">
                         <label for="pwd">Password</label>
-                        <input type="password" name="pwd">
+                        <input type="password" name="pwd" class="validate" pattern="^(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z0-9]).{8,}$" title="Must be at least 8 characters long and include one uppercase letter, one number, and one special character." required>
                     </div>
                     <div class="form-control">
                         <label for="pwd_confirm">Confirm Password</label>
-                        <input type="password" name="pwd_confirm">
+                        <input type="password" name="pwd_confirm" class="validate" pattern="^(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z0-9]).{8,}$" title="Must be at least 8 characters long and include one uppercase letter, one number, and one special character." required>
                     </div>
                 </div>
                 <button type="submit">Create account</button>
