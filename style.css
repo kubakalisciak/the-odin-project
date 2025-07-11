@@ -73,14 +73,13 @@ a {
 }
 .content {
     padding: 20px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 10px;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-template-rows: min-content min-content;
+    gap: 32px;
 }
 .project {
     border: 2px solid var(--yellow);
-    flex-shrink: 1;
     padding: 10px;
     border-radius: 10px;
     height: min-content;
