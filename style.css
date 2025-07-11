@@ -3,6 +3,8 @@
     --black: #1f1f1f;
     --white: #f3f3f3;
     --blue: #101828;
+    --yellow: #e3b261;
+    --green: #009689;
     font-family: 'Roboto', sans-serif;
 }
 * {
@@ -66,4 +68,32 @@ a {
     color: var(--white);
     text-decoration: none;
 }
-/* green: #009689; yellow: #e3b261; blue: #101828 */
+.sidebar .current {
+    color: var(--green);
+}
+.content {
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.project {
+    border: 2px solid var(--yellow);
+    flex-shrink: 1;
+    padding: 10px;
+    border-radius: 10px;
+    height: min-content;
+    width: 300px;
+}
+.project h2 {
+    font-size: 1.5rem;
+}
+.project h3 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    color: var(--green);
+}
+.project p {
+    text-align: justify;
+}
