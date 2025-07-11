@@ -4,6 +4,8 @@
     --white: #f3f3f3;
     --black: #030303;
     --accent: #712a09;
+    --gray: #a3a3a3;
+    --focus: #80a1d4;
     --padding: 20px;
 }
 * {
@@ -71,4 +73,46 @@ body {
 }
 .bottom a:hover {
     color: rgb(var(--accent), 0.7);
+}
+
+/* --- --- --- */
+.form {
+    background-color: #fff;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+legend {
+    font-size: 1.5rem;
+}
+.form-row {
+    display: flex;
+    flex-direction: row;
+    gap: 50px
+}
+.form-control {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+input {
+    width: 300px;
+    border: 0;
+    border: 1px solid var(--gray);
+    padding: 3px;
+    border-radius: 5px;
+}
+input:focus {
+    border-color: var(--focus);
+}
+button {
+    padding: 10px 20px;
+    width: 200px;
+    border: 0;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    font-family: inherit;
+    color: var(--white);
+    background-color: var(--accent);
 }
