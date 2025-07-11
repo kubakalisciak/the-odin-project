@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="https://csstools.github.io/normalize.css/11.0.0/normalize.css"> -->
+    <!-- css reset -->
+    <script src="script.js"></script>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <title>Login form</title>
+</head>
+<body>
+    <div class="image">
+        <h1><img src="logo.svg" alt="a book icon">BAABEL</h1>
+        <div class="separator"></div>
+        <p>Intricate Explorer / Unslpash</p>
+    </div>
+    <div class="login">
+        <div class="top">
+            <h2>Welcome to the Library of Alexandria Online Catalogue System (OCS). Get access to the library's digital catalogue, including books, journals, manuscripts, and multimedia resources. Search the collection, manage your loans, and reserve materials—all in one place.</h2>
+            <h2>Register an account<h2>
+        </div>
+        <form action="">
+                <div class="form">
+                <legend><h2>Let's do this!</h2></legend>
+                <div class="form-row">
+                    <div class="form-control">
+                        <label for="user_name">First name</label>
+                        <input type="text" name="user_name" required>
+                    </div>
+                    <div class="form-control">
+                        <label for="user_surname">Last name</label>
+                        <input type="text" name="user_surname" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-control">
+                        <label for="phone">Phone number</label>
+                        <input type="tel" name="phone">
+                    </div>
+                    <div class="form-control">
+                        <label for="email">Email address</label>
+                        <input type="email" name="email" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-control">
+                        <label for="pwd">Password</label>
+                        <input type="password" name="pwd" class="validate" pattern="^(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z0-9]).{8,}$" title="Must be at least 8 characters long and include one uppercase letter, one number, and one special character." required>
+                    </div>
+                    <div class="form-control">
+                        <label for="pwd_confirm">Confirm Password</label>
+                        <input type="password" name="pwd_confirm" class="validate" pattern="^(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z0-9]).{8,}$" title="Must be at least 8 characters long and include one uppercase letter, one number, and one special character." required>
+                    </div>
+                </div>
+                <button type="submit">Create account</button>
+            </div>
+            </form>
+        <div class="bottom">
+            <p>Already have an account? <a href="#">Log in</a></p>
+        </div>
+    </div>
+</body>
+</html>

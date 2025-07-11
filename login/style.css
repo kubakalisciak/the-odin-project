@@ -1,0 +1,124 @@
+@import url(https://fonts.bunny.net/css?family=akshar:400);
+@import url(https://fonts.bunny.net/css?family=abril-fatface:400);
+:root {
+    --white: #f3f3f3;
+    --black: #030303;
+    --accent: #712a09;
+    --gray: #a3a3a3;
+    --focus: #80a1d4;
+    --padding: 20px;
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    font-family: 'Akshar', sans-serif;
+    font-size: 1.2rem;
+    color: var(--black);
+}
+.login {
+    flex-grow: 1;
+}
+.image {
+    background-image: url('background.jpg');
+    background-size: 160%;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    color: var(--white);
+    display: flex;
+    flex-direction: column;
+}
+.image h1 {
+    font-family: 'Abril Fatface', sans-serif;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: var(--padding) clamp(10vw, 100px, 20vw);
+    font-size: 40px;
+    margin-top: 35%;
+}
+.image [src='logo.svg'] {
+    height: 30px;
+    margin-right: 10px;
+}
+.image p {
+    text-align: center;
+    padding: 10px;
+    font-size: 1rem;
+}
+.separator {
+    flex-grow: 1;
+}
+/* --- --- --- */
+.login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--white);
+}
+.top {
+    padding: var(--padding);
+}
+.top h2 {
+    margin: 40px 0;
+}
+.bottom {
+    padding: var(--padding);
+}
+.bottom a {
+    color: var(--accent);
+    text-decoration: none;
+}
+.bottom a:hover {
+    color: rgb(var(--accent), 0.7);
+}
+
+/* --- --- --- */
+.form {
+    background-color: #fff;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+legend {
+    font-size: 1.5rem;
+}
+.form-row {
+    display: flex;
+    flex-direction: row;
+    gap: 50px
+}
+.form-control {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+input {
+    width: 300px;
+    border: 0;
+    border: 1px solid var(--gray);
+    padding: 3px;
+    border-radius: 5px;
+}
+input:focus {
+    border-color: var(--focus);
+}
+button {
+    padding: 10px 20px;
+    width: 200px;
+    border: 0;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    font-family: inherit;
+    color: var(--white);
+    background-color: var(--accent);
+}
+.validate:user-invalid {
+    border-color: #f8333c;
+}
+.validate:user-valid {
+    border-color: #44af69;
+}
