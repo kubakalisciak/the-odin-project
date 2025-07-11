@@ -2,6 +2,9 @@
 @import url(https://fonts.bunny.net/css?family=abril-fatface:400);
 :root {
     --white: #f3f3f3;
+    --black: #030303;
+    --accent: #712a09;
+    --padding: 20px;
 }
 * {
     margin: 0;
@@ -12,6 +15,8 @@ body {
     flex-direction: row;
     height: 100vh;
     font-family: 'Akshar', sans-serif;
+    font-size: 1.2rem;
+    color: var(--black);
 }
 .login {
     flex-grow: 1;
@@ -28,7 +33,7 @@ body {
 .image h1 {
     font-family: 'Abril Fatface', sans-serif;
     background-color: rgba(0, 0, 0, 0.5);
-    padding: 20px clamp(10vw, 100px, 20vw);
+    padding: var(--padding) clamp(10vw, 100px, 20vw);
     font-size: 40px;
     margin-top: 35%;
 }
@@ -39,8 +44,31 @@ body {
 .image p {
     text-align: center;
     padding: 10px;
-
+    font-size: 1rem;
 }
 .separator {
     flex-grow: 1;
+}
+/* --- --- --- */
+.login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--white);
+}
+.top {
+    padding: var(--padding);
+}
+.top h2 {
+    margin: 40px 0;
+}
+.bottom {
+    padding: var(--padding);
+}
+.bottom a {
+    color: var(--accent);
+    text-decoration: none;
+}
+.bottom a:hover {
+    color: rgb(var(--accent), 0.7);
 }
