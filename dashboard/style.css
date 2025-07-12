@@ -32,8 +32,12 @@ body {
 .sidebar .option {
     display: flex;
     align-items: center;
-    gap: var(--padding);
+    gap: 20px;
     font-size: 18px;
+    font-weight: bold;
+}
+.sidebar .option img {
+    height: 1.5em;
 }
 .options {
     margin-top: 50px;
@@ -99,6 +103,7 @@ button {
     font-weight: bold;
     color: var(--white);
     background-color: var(--accent2);
-    padding: 10px 35px;
-    border-radius: 35px;
+    padding: 10px 50px;
+    border-radius: 50px;
+    margin: 0 calc(15px / 2);
 }
