@@ -1,4 +1,5 @@
-@import url(https://fonts.bunny.net/css?family=roboto:400|allerta:400);
+@import url('https://fonts.bunny.net/css?family=roboto:400|allerta:400');
+
 :root {
     --black: #1f1f1f;
     --white: #f3f3f3;
@@ -7,93 +8,118 @@
     --green: #009689;
     font-family: 'Roboto', sans-serif;
 }
+
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
+
 body {
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     background-color: var(--white);
+    font-family: 'Roboto', sans-serif;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Header */
+.header {
+    background-color: var(--black);
+    color: var(--white);
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.hero {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.hero img {
+    height: 2em;
+}
+
+.navigation {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    font-size: 1rem;
+}
+
+/* Main Layout */
+.container {
+    display: flex;
+    flex-grow: 1;
+}
+
+/* Sidebar */
+.sidebar {
+    background-color: var(--blue);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px 16px;
+    min-width: 200px;
+}
+
+.sidebar a {
+    font-size: 1.1rem;
+    color: var(--white);
+}
+
+.sidebar .current {
+    color: var(--green);
+}
+.content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-auto-rows: min-content;
+  gap: 1.5rem;
+  padding: 1rem;
+}
+.project {
+    display: grid;
+    border: 2px solid var(--yellow);
+    padding: 1rem;
+    border-radius: 1rem;
+    grid-template-rows: 1fr minmax(min-content, 0.5fr) auto;;
+}
+.project h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.25rem;
+}
+
+.project h3 {
+    font-size: 1rem;
+    color: var(--green);
+    margin-bottom: 0.5rem;
+}
+
+.project p {
+    text-align: justify;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+a {
+    text-decoration: underline
+}
+.sidebar a, .header a {
+    text-decoration: none;
 }
 .footer {
     background-color: var(--black);
     color: var(--white);
     padding: 15px;
     text-align: center;
-}
-a {
-    color: inherit;
-}
-.header {
-    background-color: var(--black);
-    color: var(--white);
-    padding: 15px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-}
-.hero {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
-.hero img {
-    height: 2em;
-}
-.navigation {
-    font-size: 1rem;
-    display: flex;
-    gap: 15px;
-}
-.navigation a {
-    text-decoration: none;
-}
-.container {
-    display: flex;
-    flex-direction: row;
-    flex-grow: 1;
-}
-.sidebar {
-    background-color: var(--blue);
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    padding: 20px 12px;
-}
-.sidebar a {
-    font-size: 1.2rem;
-    color: var(--white);
-    text-decoration: none;
-}
-.sidebar .current {
-    color: var(--green);
-}
-.content {
-    padding: 20px;
-    display: grid;
-    grid-template-columns: auto auto auto auto;
-    grid-template-rows: min-content min-content;
-    gap: 32px;
-    /* todo: make responsive */
-}
-.project {
-    border: 2px solid var(--yellow);
-    padding: 10px;
-    border-radius: 10px;
-    height: min-content;
-    width: 300px;
-}
-.project h2 {
-    font-size: 1.5rem;
-}
-.project h3 {
-    font-size: 1rem;
-    margin-bottom: 0.5rem;
-    color: var(--green);
-}
-.project p {
-    text-align: justify;
+    font-size: 0.9rem;
 }
