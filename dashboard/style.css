@@ -1,0 +1,10 @@
+@import url(https://fonts.bunny.net/css?family=roboto:400,700);
+:root {
+    --accent1: #ffd03f;
+    --accent2: #7944ff;
+    --white: #ccebff;
+    --black: #0d1216;
+    --gray: #e2e8f0;
+    font-family: 'Roboto';
+    font-family: inherit;
+}
