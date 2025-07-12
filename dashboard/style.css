@@ -6,7 +6,7 @@
 :root {
     --accent1: #ffd03f;
     --accent2: #7944ff;
-    --white: #ccebff;
+    --white: #e6f5ff;
     --black: #0d1216;
     --gray: #cad5e4;
 
@@ -26,10 +26,14 @@ body {
     padding: var(--padding);
     color: var(--white);
 }
+.sidebar h1.option {
+    font-size: 32px;
+}
 .sidebar .option {
     display: flex;
     align-items: center;
     gap: var(--padding);
+    font-size: 18px;
 }
 .options {
     margin-top: 50px;
