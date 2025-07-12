@@ -1,10 +1,36 @@
 @import url(https://fonts.bunny.net/css?family=roboto:400,700);
+* {
+    margin: 0;
+    padding: 0;
+}
 :root {
     --accent1: #ffd03f;
     --accent2: #7944ff;
     --white: #ccebff;
     --black: #0d1216;
     --gray: #e2e8f0;
-    font-family: 'Roboto';
-    font-family: inherit;
+
+    --padding: 10px;
+}
+.container {
+    display: grid;
+    grid-template-columns: 300px auto;
+    grid-template-rows: 100vh;
+    font-family: 'Roboto', sans-serif;
+}
+.sidebar {
+    background-color: var(--accent2);
+    padding: var(--padding);
+    color: var(--white);
+}
+.sidebar .option {
+    display: flex;
+    align-items: center;
+    gap: var(--padding);
+}
+.options {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: var(--padding);
 }
