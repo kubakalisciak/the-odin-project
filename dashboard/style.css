@@ -18,7 +18,7 @@ body {
 .container {
     display: grid;
     grid-template-columns: 300px auto;
-    grid-template-rows: 100vh;
+    grid-template-rows: minmax(100vh, auto);
     font-family: 'Roboto', sans-serif;
 }
 .sidebar {
@@ -141,4 +141,33 @@ button {
     display: flex;
     gap: 10px;
     justify-content: flex-end;
+}
+.announcements, .notifications{
+    background-color: var(--white);
+    padding: 30px;
+    border-radius: 30px;
+    width: 300px;
+}
+.announcements h3, .notifications h3 {
+    margin-bottom: 20px;
+}
+ul {
+    list-style: none;
+}
+li {
+    border-bottom: 2px solid var(--gray);
+    padding: 10px;
+}
+li:last-child {
+    border-bottom: none;
+    padding-bottom: none
+}
+a {
+    color: var(--accent2);
+    text-decoration: none;
+}
+.other {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
