@@ -171,3 +171,6 @@ a {
     flex-direction: column;
     gap: 20px;
 }
+.bold {
+    font-weight: bold;
+}
