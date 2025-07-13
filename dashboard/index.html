@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <title>Dashboard</title>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <h1 class="option"><img src="assets/dashboard.svg" style="height: 40px"> Dashboard</h1>
+            <div class="options">
+                <div class="option"><img src="assets/home.svg"><p>Home</p></div>
+                <div class="option"><img src="assets/profile.svg"><p>Profile</p></div>
+                <div class="option"><img src="assets/messages.svg"><p>Messages</p></div>
+                <div class="option"><img src="assets/history.svg"><p>History</p></div>
+                <div class="option"><img src="assets/tasks.svg"><p>Tasks</p></div>
+                <div class="option"><img src="assets/communities.svg"><p>Communities</p></div>
+            </div>
+            <div class="options">
+                <div class="option"><img src="assets/settings.svg"><p>Settings</p></div>
+                <div class="option"><img src="assets/support.svg"><p>Support</p></div>
+                <div class="option"><img src="assets/privacy.svg"><p>Privacy</p></div>
+            </div>
+        </div>
+        <div class="main">
+            <div class="header">
+                <div class="top-row">
+                    <img src="assets/search.svg">
+                    <input type="text" disabled>
+                    <span></span>
+                    <div class="side-menu">
+                        <img src="assets/notifications.svg">
+                        <img src="assets/profile.png"class="circle">
+                        <span class="bold">Admin</span>
+                    </div>
+                </div>
+                <div class="bottom-row">
+                    <div class="intro">
+                        <img src="assets/profile.png" class="circle-big">
+                        <div>
+                            <p>Hello,</p>
+                            <h2>Admin (@admin)</h2>
+                        </div>
+                    </div>
+                    <div class="buttons">
+                        <button>New</button>
+                        <button>Edit</button>
+                        <button>Share</button>
+                    </div>
+                </div>
+            </div>
+            <div class="content">
+                <div class="projects">
+                    <div class="projects-grid">
+                        <div class="project-card">
+                            <h3>'main' Server</h3>
+                            <p>The main BlackStork's instance server. <br> Current stats: isUp: <span class="bold">TRUE</span>; health: <span class="bold">99</span>; avgResponseTime: <span class="bold">407ms</span>; isBackedUp: <span class="bold">TRUE</span>; version: <span class="bold">v3.1.6</span></p>
+                            <div class="icons">
+                                <img src="assets/favorite.svg">
+                                <img src="assets/view.svg">
+                                <img src="assets/edit.svg">
+                            </div>
+                        </div>
+                        <div class="project-card">
+                            <h3>'beta' Server</h3>
+                            <p>The secondary BlackStork's instance server, either used as backup during times of significant load, as backup vehicle or as a snadbox for testing and installing updates. <br> Current stats: isUp: <span class="bold">TRUE</span>; isMain: <span class="bold">FALSE</span>; health: <span class="bold">84</span>; avgResponseTime: <span class="bold">893ms</span>; isBackedUp: <span class="bold">FALSE</span>; version: <span class="bold">v3.2-beta</span></p>
+                            <div class="icons">
+                                <img src="assets/favorite.svg">
+                                <img src="assets/view.svg">
+                                <img src="assets/edit.svg">
+                            </div>
+                        </div>
+                        <div class="project-card">
+                            <h3>Database</h3>
+                            <p>The database logs loans, returns and keeps a copy of the whole catalogue. IT also acts as a backup location for all other nodes.<br> Current stats: isUp: <span class="bold">TRUE</span>; health: <span class="bold">100</span>; avgReadTime: <span class="bold">117ms</span>; avgWriteTime: <span class="bold">304ms</span>; isBackedUp: <span class="bold">FALSE</span>; version: <span class="bold">v3.1.6;</span>
+                            </p>
+                            <div class="icons">
+                                <img src="assets/favorite.svg">
+                                <img src="assets/view.svg">
+                                <img src="assets/edit.svg">
+                            </div>
+                        </div>
+                        <div class="project-card">
+                            <h3>API</h3>
+                            <p>The API facilitates communication between nodes. <br> Current stats: isUp: <span class="bold">TRUE</span>; health: <span class="bold">31</span>; avgResponseTime: <span class="bold">104ms</span>; requestsPerMin: <span class="bold">67.8</span>; failedRequestsPerMin: <span class="bold">45.4</span>; version: <span class="bold">v3.2</span></p>
+                            <div class="icons">
+                                <img src="assets/favorite.svg">
+                                <img src="assets/view.svg">
+                                <img src="assets/edit.svg">
+                            </div>
+                        </div>
+                        <div class="project-card">
+                            <h3>Client Frontend</h3>
+                            <p>Client-facing features such as catalogue, loan management, etc. <br> Current stats:
+                            isUp: <span class="bold">FALSE</span>; health: <span class="bold">0</span>; avgResponseTime: <span class="bold">0ms</span>; activeUsers: <span class="bold">2</span>; version: <span class="bold">v3.2</span></p>
+                            <div class="icons">
+                                <img src="assets/favorite.svg">
+                                <img src="assets/view.svg">
+                                <img src="assets/edit.svg">
+                            </div>
+                        </div>
+                        <div class="project-card">
+                            <h3>Internal Frontend</h3>
+                            <p>Internally used features: loans and returns, magazine orders, inventory management, etc. <br> Current stats:
+                            isUp: <span class="bold">TRUE</span>; health: <span class="bold">98</span>; avgResponseTime: <span class="bold">154ms</span>; activeUsers: <span class="bold">39</span>; version: <span class="bold">v3.1.6</span></p>
+                            <div class="icons">
+                                <img src="assets/favorite.svg">
+                                <img src="assets/view.svg">
+                                <img src="assets/edit.svg">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="other">
+                    <div class="announcements">
+                        <h3>Announcements</h3>
+                        <ul>
+                            <li>
+                                <h4>Maintenance</h4>
+                                <p><span class="bold">Today and tomorrow</span> due to major update rollout (v3.2)</p>
+                            </li>
+                            <li>
+                                <h4>Privacy policy update</h4>
+                                <p>Full text available <a href="#">here</a>. Changed due to GDPR modifications and new CA laws impacting logs.</p>
+                            </li>
+                            <li>
+                                <h4>10th Anniversary</h4>
+                                <p>1.03.2025 - 10th anniversary of BlackStork. Planned announcement - [redacted] at BlackStork General Meeting.</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="notifications">
+                        <h3>Notifications</h3>
+                        <ul>
+                            <li>
+                                <h4>Anne Wilkebaum</h4>
+                                <h4>Re: Version 3.2 beta</h4>
+                                <p>Absolutely love the features! However I've noticed a bug when I ... <a href="#">Read more</a></p>
+                            </li>
+                            <li>
+                                <h4>SSRnC</h4>
+                                <h4>Increase of failed 'api' requests</h4>
+                                <p>We've noticed a 13392% increase in failed 'api' requests ...<a href="#">Read more</a></p>
+                            </li>
+                            <li>
+                                <h4>CI/CD Report</h4>
+                                <h4>Deployment of 'v3.2-beta' started</h4>
+                                <p>Estmated time: 2h47min44s; Data usage: 192 047 MB; started 19min ago.</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
