@@ -82,10 +82,11 @@ a {
 }
 .content {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  grid-auto-rows: min-content;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 400px));
   gap: 1.5rem;
   padding: 1rem;
+  grid-auto-rows: min-content;
+  flex-grow: 1;
 }
 .project {
     display: grid;
