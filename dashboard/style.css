@@ -8,8 +8,8 @@
     --accent2: #7944ff;
     --white: #e6f5ff;
     --black: #0d1216;
-    --gray: #cad5e4;
-
+    --gray: #d0dcec;
+    
     --padding: 10px;
 }
 body {
@@ -106,4 +106,39 @@ button {
     padding: 10px 50px;
     border-radius: 50px;
     margin: 0 calc(15px / 2);
+}
+.content {
+    display: flex;
+    padding: 20px;
+}
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 400px));
+    gap: 20px;
+}
+.projects {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+#header-projects {
+    grid-area: header;
+}
+.project-card {
+    padding: 30px;
+    background-color: var(--white);
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.project-card h3 {
+    margin-top: 10px;
+    margin-bottom: -20px;
+}
+.icons {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
 }
