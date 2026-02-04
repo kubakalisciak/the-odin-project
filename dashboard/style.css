@@ -131,6 +131,7 @@ button {
     border-radius: 30px;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     gap: 20px;
 }
 .project-card h3 {
