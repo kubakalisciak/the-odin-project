@@ -17,17 +17,32 @@ function addBook(title, author, pages, isRead) {
     myLibrary.push(new Book(title, author, pages, isRead))
 }
 
-function displayBooksOnPage() {
+function displayBooksOnPage(list) {
     const container = document.getElementById('bookContainer')
-    for (let i=0; i < myLibrary.length; i++) {
-        const book = myLibrary[i]
+    for (let i = 0; i < list.length; i++) {
+        const book = list[i]
         const bookCard = document.createElement('div')
         bookCard.classList.add('card')
+        bookCard.id = book.id
 
         bookCard.appendChild(generateBookLabel(book, 'title', 'h2', ''))
         bookCard.appendChild(generateBookLabel(book, 'author', 'p', 'Author: '))
         bookCard.appendChild(generateBookLabel(book, 'pages', 'p', 'Pages: '))
         bookCard.appendChild(generateBookLabel(book, 'isRead', 'p', 'Is read? '))
+        
+        const removeBtn = document.createElement('button')
+        removeBtn.textContent = 'Remove'
+        removeBtn.addEventListener('click', () => {
+            let bookId = book.id;
+            for (let i=0; i < list.length; i++) {
+                if (list[i].id === bookId) {
+                    list.splice(i, 1)
+                    redrawContainer(container, list)
+                }
+            }
+        });
+
+        bookCard.appendChild(removeBtn)
 
         container.appendChild(bookCard)
     }
@@ -39,11 +54,16 @@ function generateBookLabel(object, property, type, text) {
     return label
 }
 
-addBook('title', 'author', 'pages', true)
-addBook('title', 'author', 'pages', true)
-addBook('title', 'author', 'pages', true)
-addBook('title', 'author', 'pages', true)
-addBook('title', 'author', 'pages', true)
+function redrawContainer(container, list) {
+    container.textContent = ''
+    displayBooksOnPage(myLibrary)
+}
+
+addBook('title1', 'author', 'pages', true)
+addBook('title2', 'author', 'pages', true)
+addBook('title3', 'author', 'pages', true)
+addBook('title4', 'author', 'pages', true)
+addBook('title5', 'author', 'pages', true)
 
 
-displayBooksOnPage()
+displayBooksOnPage(myLibrary)
