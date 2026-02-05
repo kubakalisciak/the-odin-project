@@ -23,21 +23,30 @@ a {
     font-weight: bold;
     text-decoration: none;
 }
-.card > button {
-    color: red;
+button {
     padding: 5px 10px;
     border-radius: 10px;
-    border: 2px solid red;
     margin: 10px 0 0 0;
-    background-color: inherit;
+    background-color: inherit;   
 }
-.card > button:hover {
+
+.removeBtn {
     color: red;
-    padding: 5px 10px;
-    border-radius: 10px;
     border: 2px solid red;
-    margin: 10px 0 0 0;
+}
+.removeBtn:hover {
     background-color: rgba(255, 0, 0, 0.2);
+}
+.readBtn {
+    color: green;
+    border: 2px solid ;
+}
+.readBtn:hover {
+    background-color: rgba(0, 128, 0, 0.2);
+}
+.buttonContainer {
+    display: flex;
+    gap: 10px
 }
 .card {
     padding: 20px;

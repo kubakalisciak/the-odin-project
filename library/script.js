@@ -23,15 +23,18 @@ function displayBooksOnPage(list) {
         const book = list[i]
         const bookCard = document.createElement('div')
         bookCard.classList.add('card')
-        bookCard.id = book.id
+        const buttonContainer = document.createElement('div');
+        buttonContainer.classList.add('buttonContainer')
 
         bookCard.appendChild(generateBookLabel(book, 'title', 'h2', ''))
         bookCard.appendChild(generateBookLabel(book, 'author', 'p', 'Author: '))
         bookCard.appendChild(generateBookLabel(book, 'pages', 'p', 'Pages: '))
         bookCard.appendChild(generateBookLabel(book, 'isRead', 'p', 'Is read? '))
         
+
         const removeBtn = document.createElement('button')
         removeBtn.textContent = 'Remove'
+        removeBtn.classList.add('removeBtn')
         removeBtn.addEventListener('click', () => {
             let bookId = book.id;
             for (let i=0; i < list.length; i++) {
@@ -42,8 +45,17 @@ function displayBooksOnPage(list) {
             }
         });
 
-        bookCard.appendChild(removeBtn)
+        const readBtn = document.createElement('button')
+        readBtn.textContent = 'Read'
+        readBtn.classList.add('readBtn')
+        readBtn.addEventListener('click', () => {
+            book.isRead = !book.isRead;
+            redrawContainer(container, list)
+        });
 
+        buttonContainer.appendChild(removeBtn)
+        buttonContainer.appendChild(readBtn)
+        bookCard.appendChild(buttonContainer)
         container.appendChild(bookCard)
     }
 }
@@ -59,11 +71,11 @@ function redrawContainer(container, list) {
     displayBooksOnPage(myLibrary)
 }
 
-addBook('title1', 'author', 'pages', true)
-addBook('title2', 'author', 'pages', true)
-addBook('title3', 'author', 'pages', true)
-addBook('title4', 'author', 'pages', true)
-addBook('title5', 'author', 'pages', true)
+addBook('title1', 'author', 'pages', false)
+addBook('title2', 'author', 'pages', false)
+addBook('title3', 'author', 'pages', false)
+addBook('title4', 'author', 'pages', false)
+addBook('title5', 'author', 'pages', false)
 
 
 displayBooksOnPage(myLibrary)
