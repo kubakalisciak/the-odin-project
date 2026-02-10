@@ -1,4 +1,5 @@
 const myLibrary = []
+const container = document.getElementById('bookContainer')
 
 function Book(title, author, pages, isRead) {
     this.title = title;
@@ -18,7 +19,6 @@ function addBook(title, author, pages, isRead) {
 }
 
 function displayBooksOnPage(list) {
-    const container = document.getElementById('bookContainer')
     for (let i = 0; i < list.length; i++) {
         const book = list[i]
         const bookCard = document.createElement('div')
@@ -68,8 +68,16 @@ function generateBookLabel(object, property, type, text) {
 
 function redrawContainer(container, list) {
     container.textContent = ''
-    displayBooksOnPage(myLibrary)
+    displayBooksOnPage(list)
 }
+
+
+const addBtn = document.getElementById('addBtn');
+addBtn.addEventListener('click', () => {
+    alert("Click OK to start adding the book")
+    myLibrary.push(new Book(prompt("Title:"), prompt("Author:"), prompt("Pages:"),prompt("Is read?:", false),))
+    redrawContainer(container, myLibrary)
+});
 
 addBook('title1', 'author', 'pages', false)
 addBook('title2', 'author', 'pages', false)

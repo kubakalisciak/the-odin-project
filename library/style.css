@@ -44,6 +44,14 @@ button {
 .readBtn:hover {
     background-color: rgba(0, 60, 255, 0.2);
 }
+.addBtn {
+    background-color: #fff9f9;
+    border: 2px solid #caffc9;
+    color: #193d18;
+    font-weight: bold;
+    font-size: 18px;
+}
+
 .buttonContainer {
     display: flex;
     gap: 10px
@@ -63,6 +71,8 @@ button {
 .wrapper {
     padding: 15px;
     background-color: #193d18;
+    display: flex;
+    justify-content: space-between;
 }
 #bookContainer {
     display: flex;
