@@ -9,7 +9,7 @@ body {
     flex-direction: column;
     justify-content: space-between;
     height: 100vh;
-    font-family: 'JetBrains Mono';
+    font-family: 'JetBrains Mono', monospace;
     background-color: #caffc9;
     color: #252525
 }
